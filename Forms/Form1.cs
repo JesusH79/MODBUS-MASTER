@@ -1,5 +1,6 @@
 using MODBUS_MASTER.Forms;
 using MODBUS_MASTER.Models;
+using MODBUS_MASTER.Properties;
 using static System.Windows.Forms.DataFormats;
 
 namespace MODBUS_MASTER
@@ -12,7 +13,7 @@ namespace MODBUS_MASTER
         }
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            txbIPSlave.Text = Properties.Settings.Default.IP;
+            txbIPSlave.Text = Settings.Default.IP;
         }
         private void btnFC05_Click(object sender, EventArgs e)
         {
@@ -60,7 +61,8 @@ namespace MODBUS_MASTER
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.IP = txbIPSlave.Text;
+            Settings.Default.IP = txbIPSlave.Text;
+            Settings.Default.Save();
         }
 
         private void btnFC04_Click(object sender, EventArgs e)
