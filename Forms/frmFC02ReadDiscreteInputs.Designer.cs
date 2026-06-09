@@ -127,6 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(288, 510);
             Controls.Add(rtxValoresCoils);
             Controls.Add(btnFC02ReadDiscreteInputs);
