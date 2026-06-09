@@ -94,7 +94,7 @@ namespace MODBUS_MASTER.Forms
                     inputCoils = modbus_Client.ReadDiscreteInputs(int.Parse(txbDireccion.Text), int.Parse(txbNumeroCoils.Text));
                     for (int i = 0; i < inputCoils.Length; i++)
                     {
-                        rtxValoresCoils.Text = ($"Discrete Input {i}: {inputCoils[i]} \r\n");
+                        rtxValoresCoils.Text += ($"Discrete Input {i}: {inputCoils[i]} \r\n");
                     }
 
                 }

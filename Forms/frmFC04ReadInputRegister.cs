@@ -95,7 +95,7 @@ namespace MODBUS_MASTER.Forms
                     inputRegisters = modbus_Client.ReadInputRegisters(int.Parse(txbDireccion.Text), int.Parse(txbNumeroRegistros.Text));
                     for (int i = 0; i < inputRegisters.Length; i++)
                     {
-                        rtxValoresRegistros.Text = ($"Register {i}: {inputRegisters[i]} \r\n");
+                        rtxValoresRegistros.Text += ($"Register {i}: {inputRegisters[i]} \r\n");
                     }
 
                 }
