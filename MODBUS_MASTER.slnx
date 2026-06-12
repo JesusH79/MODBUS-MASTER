@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="../Instalador_ModbusMaster/Instalador_ModbusMaster.vdproj" Type="Installer">
+    <Build />
+  </Project>
   <Project Path="MODBUS_MASTER.csproj" />
 </Solution>
