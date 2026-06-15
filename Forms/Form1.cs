@@ -14,8 +14,12 @@ namespace MODBUS_MASTER
         }
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            // URL del archivo XML en tu repositorio GitHub (rama main)
-            AutoUpdater.Start("https://raw.githubusercontent.com/JesusH79/MODBUS-MASTER/main/update.xml");
+            /*
+             para subir isntaldor a repsoitorio github
+              git add .
+              git commit -m "Actualización"
+              git push*/
+
             txbIPSlave.Text = Settings.Default.IP;
         }
         private void btnFC05_Click(object sender, EventArgs e)
