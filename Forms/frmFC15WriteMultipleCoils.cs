@@ -101,6 +101,14 @@ namespace MODBUS_MASTER.Forms
                 bool[] valoresCoils = new bool[numeroCoils];
                 for (int i = 0; i < numeroCoils; i++)
                 {
+                    if (dgvValoresColis.Rows[i].Cells[1].Value == null || dgvValoresColis.Rows[i].Cells[1].Value.ToString() == "")
+                    {
+                        MessageBox.Show($"El valor del coil en la fila {i + 1} no puede estar vacío. Por favor, ingresa un valor (0 o 1).");
+                        return;
+                    }
+                }
+                for (int i = 0; i < numeroCoils; i++)
+                {
                     valorCoil = Convert.ToInt32(dgvValoresColis.Rows[i].Cells[1].Value);
 
                     if (valorCoil == 1)

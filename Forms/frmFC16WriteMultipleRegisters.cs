@@ -101,6 +101,14 @@ namespace MODBUS_MASTER.Forms
                 int[] valoresRegistros = new int[numeroRegistros];
                 for (int i = 0; i < numeroRegistros; i++)
                 {
+                    if (dgvRegisters.Rows[i].Cells[1].Value == null || dgvRegisters.Rows[i].Cells[1].Value.ToString() == "")
+                    {
+                        MessageBox.Show($"El valor del registro en la fila {i + 1} no puede estar vacío. Por favor, ingresa un valor");
+                        return;
+                    }
+                }
+                for (int i = 0; i < numeroRegistros; i++)
+                {
                     valorRegistro = Convert.ToInt32(dgvRegisters.Rows[i].Cells[1].Value);
                     valoresRegistros[i] = valorRegistro;
                 }
