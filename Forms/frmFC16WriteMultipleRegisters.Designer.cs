@@ -47,10 +47,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(16, 32);
+            label1.Location = new Point(16, 19);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 28);
+            label1.Size = new Size(110, 32);
             label1.TabIndex = 0;
             label1.Text = "IP SLAVE:";
             // 
@@ -58,10 +58,10 @@
             // 
             lblIPSlave.AutoSize = true;
             lblIPSlave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIPSlave.Location = new Point(116, 32);
+            lblIPSlave.Location = new Point(134, 19);
             lblIPSlave.Margin = new Padding(4, 0, 4, 0);
             lblIPSlave.Name = "lblIPSlave";
-            lblIPSlave.Size = new Size(28, 28);
+            lblIPSlave.Size = new Size(33, 32);
             lblIPSlave.TabIndex = 1;
             lblIPSlave.Text = "IP";
             // 
@@ -69,10 +69,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(16, 99);
+            label2.Location = new Point(16, 74);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(184, 28);
+            label2.Size = new Size(223, 32);
             label2.TabIndex = 2;
             label2.Text = "DIRECCION INICIAL:";
             // 
@@ -80,37 +80,37 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(45, 147);
+            label3.Location = new Point(16, 106);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(155, 28);
+            label3.Size = new Size(186, 32);
             label3.TabIndex = 3;
             label3.Text = "NO. REGISTROS:";
             // 
             // txbDireccionInicial
             // 
-            txbDireccionInicial.Location = new Point(208, 99);
+            txbDireccionInicial.Location = new Point(247, 71);
             txbDireccionInicial.Margin = new Padding(4);
             txbDireccionInicial.Name = "txbDireccionInicial";
-            txbDireccionInicial.Size = new Size(80, 34);
+            txbDireccionInicial.Size = new Size(80, 39);
             txbDireccionInicial.TabIndex = 4;
             // 
             // txbNumeroRegistros
             // 
-            txbNumeroRegistros.Location = new Point(208, 147);
+            txbNumeroRegistros.Location = new Point(247, 118);
             txbNumeroRegistros.Margin = new Padding(4);
             txbNumeroRegistros.Name = "txbNumeroRegistros";
-            txbNumeroRegistros.Size = new Size(80, 34);
+            txbNumeroRegistros.Size = new Size(80, 39);
             txbNumeroRegistros.TabIndex = 5;
             // 
             // lblConexion
             // 
             lblConexion.AutoSize = true;
             lblConexion.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblConexion.Location = new Point(313, 81);
+            lblConexion.Location = new Point(16, 224);
             lblConexion.Margin = new Padding(4, 0, 4, 0);
             lblConexion.Name = "lblConexion";
-            lblConexion.Size = new Size(66, 46);
+            lblConexion.Size = new Size(78, 54);
             lblConexion.TabIndex = 6;
             lblConexion.Text = "NC";
             lblConexion.Click += lblConexion_Click;
@@ -121,11 +121,11 @@
             dgvRegisters.AllowUserToDeleteRows = false;
             dgvRegisters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRegisters.Columns.AddRange(new DataGridViewColumn[] { Direccion, Valor });
-            dgvRegisters.Location = new Point(13, 266);
+            dgvRegisters.Location = new Point(13, 297);
             dgvRegisters.Margin = new Padding(4);
             dgvRegisters.Name = "dgvRegisters";
             dgvRegisters.RowHeadersWidth = 51;
-            dgvRegisters.Size = new Size(426, 263);
+            dgvRegisters.Size = new Size(352, 263);
             dgvRegisters.TabIndex = 7;
             dgvRegisters.EditingControlShowing += dgvRegisters_EditingControlShowing;
             // 
@@ -145,7 +145,7 @@
             // 
             // btnFC16WriteRegisters
             // 
-            btnFC16WriteRegisters.Location = new Point(16, 201);
+            btnFC16WriteRegisters.Location = new Point(236, 221);
             btnFC16WriteRegisters.Margin = new Padding(4);
             btnFC16WriteRegisters.Name = "btnFC16WriteRegisters";
             btnFC16WriteRegisters.Size = new Size(129, 57);
@@ -156,7 +156,7 @@
             // 
             // btnAplicar
             // 
-            btnAplicar.Location = new Point(310, 131);
+            btnAplicar.Location = new Point(16, 163);
             btnAplicar.Margin = new Padding(4);
             btnAplicar.Name = "btnAplicar";
             btnAplicar.Size = new Size(129, 57);
@@ -167,10 +167,10 @@
             // 
             // frmFC16WriteMultipleRegisters
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(454, 679);
+            ClientSize = new Size(373, 755);
             Controls.Add(btnAplicar);
             Controls.Add(btnFC16WriteRegisters);
             Controls.Add(dgvRegisters);
@@ -185,6 +185,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4);
             Name = "frmFC16WriteMultipleRegisters";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "frmFC16WriteMultipleRegisters";
             Load += frmFC16WriteMultipleRegisters_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRegisters).EndInit();

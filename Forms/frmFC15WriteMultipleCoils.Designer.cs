@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             lblIPSlave = new Label();
             label2 = new Label();
             txbDireccionInicial = new TextBox();
@@ -38,9 +37,9 @@
             txbNumeroCoils = new TextBox();
             btnAplicar = new Button();
             dgvValoresColis = new DataGridView();
-            btnFC15 = new Button();
             Direccion = new DataGridViewTextBoxColumn();
             Valor = new DataGridViewTextBoxColumn();
+            btnFC15 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvValoresColis).BeginInit();
             SuspendLayout();
             // 
@@ -50,7 +49,7 @@
             label1.Location = new Point(23, 23);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 28);
+            label1.Size = new Size(110, 32);
             label1.TabIndex = 0;
             label1.Text = "IP SLAVE:";
             // 
@@ -60,25 +59,25 @@
             lblIPSlave.Location = new Point(123, 23);
             lblIPSlave.Margin = new Padding(4, 0, 4, 0);
             lblIPSlave.Name = "lblIPSlave";
-            lblIPSlave.Size = new Size(33, 28);
+            lblIPSlave.Size = new Size(40, 32);
             lblIPSlave.TabIndex = 1;
             lblIPSlave.Text = "IP ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 77);
+            label2.Location = new Point(23, 78);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(111, 56);
+            label2.Size = new Size(223, 32);
             label2.TabIndex = 2;
-            label2.Text = "DIRECCION\r\nINICIAL";
+            label2.Text = "DIRECCION INICIAL:";
             // 
             // txbDireccionInicial
             // 
-            txbDireccionInicial.Location = new Point(155, 86);
+            txbDireccionInicial.Location = new Point(248, 78);
             txbDireccionInicial.Name = "txbDireccionInicial";
-            txbDireccionInicial.Size = new Size(78, 34);
+            txbDireccionInicial.Size = new Size(78, 39);
             txbDireccionInicial.TabIndex = 3;
             txbDireccionInicial.TextAlign = HorizontalAlignment.Center;
             // 
@@ -86,9 +85,9 @@
             // 
             lblConexion.AutoSize = true;
             lblConexion.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblConexion.Location = new Point(313, 86);
+            lblConexion.Location = new Point(23, 246);
             lblConexion.Name = "lblConexion";
-            lblConexion.Size = new Size(66, 46);
+            lblConexion.Size = new Size(78, 54);
             lblConexion.TabIndex = 4;
             lblConexion.Text = "NC";
             lblConexion.Click += lblConexion_Click;
@@ -96,24 +95,24 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(23, 161);
+            label3.Location = new Point(23, 122);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(125, 56);
+            label3.Size = new Size(161, 32);
             label3.TabIndex = 5;
-            label3.Text = "NUMERO DE\r\nCOILS";
+            label3.Text = "No. DE COILS:";
             // 
             // txbNumeroCoils
             // 
-            txbNumeroCoils.Location = new Point(155, 171);
+            txbNumeroCoils.Location = new Point(248, 123);
             txbNumeroCoils.Name = "txbNumeroCoils";
-            txbNumeroCoils.Size = new Size(78, 34);
+            txbNumeroCoils.Size = new Size(78, 39);
             txbNumeroCoils.TabIndex = 6;
             txbNumeroCoils.TextAlign = HorizontalAlignment.Center;
             // 
             // btnAplicar
             // 
-            btnAplicar.Location = new Point(297, 165);
+            btnAplicar.Location = new Point(23, 183);
             btnAplicar.Name = "btnAplicar";
             btnAplicar.Size = new Size(112, 47);
             btnAplicar.TabIndex = 7;
@@ -129,23 +128,13 @@
             dgvValoresColis.AllowUserToResizeRows = false;
             dgvValoresColis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvValoresColis.Columns.AddRange(new DataGridViewColumn[] { Direccion, Valor });
-            dgvValoresColis.Location = new Point(12, 259);
+            dgvValoresColis.Location = new Point(23, 314);
             dgvValoresColis.Name = "dgvValoresColis";
             dgvValoresColis.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvValoresColis.RowHeadersWidth = 51;
-            dgvValoresColis.Size = new Size(338, 188);
+            dgvValoresColis.Size = new Size(315, 188);
             dgvValoresColis.TabIndex = 8;
             dgvValoresColis.EditingControlShowing += dgvValoresColis_EditingControlShowing;
-            // 
-            // btnFC15
-            // 
-            btnFC15.Location = new Point(356, 259);
-            btnFC15.Name = "btnFC15";
-            btnFC15.Size = new Size(112, 47);
-            btnFC15.TabIndex = 9;
-            btnFC15.Text = "WRITE";
-            btnFC15.UseVisualStyleBackColor = true;
-            btnFC15.Click += btnFC15_Click;
             // 
             // Direccion
             // 
@@ -161,12 +150,22 @@
             Valor.Name = "Valor";
             Valor.Width = 125;
             // 
+            // btnFC15
+            // 
+            btnFC15.Location = new Point(238, 246);
+            btnFC15.Name = "btnFC15";
+            btnFC15.Size = new Size(112, 47);
+            btnFC15.TabIndex = 9;
+            btnFC15.Text = "WRITE";
+            btnFC15.UseVisualStyleBackColor = true;
+            btnFC15.Click += btnFC15_Click;
+            // 
             // frmFC15WriteMultipleCoils
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(480, 711);
+            ClientSize = new Size(370, 766);
             Controls.Add(btnFC15);
             Controls.Add(dgvValoresColis);
             Controls.Add(btnAplicar);
@@ -181,6 +180,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4);
             Name = "frmFC15WriteMultipleCoils";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "frmFC15WriteMultipleCoils";
             FormClosing += frmFC15WriteMultipleCoils_FormClosing;
             Load += frmFC15WriteMultipleCoils_Load;
@@ -192,7 +192,6 @@
         #endregion
 
         private Label label1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label lblIPSlave;
         private Label label2;
         private TextBox txbDireccionInicial;

@@ -17,9 +17,7 @@ namespace MODBUS_MASTER.Forms
             InitializeComponent();
         }
 
-        bool conexion = false;
         ModbusClient modbus_Client = new ModbusClient();
-
 
         public void Conectar()
         {
@@ -31,7 +29,8 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblConexion.Text = "NC";
                 lblConexion.BackColor = Color.Red;
             }
@@ -47,7 +46,7 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void frmFC02ReadDiscreteInputs_Load(object sender, EventArgs e)

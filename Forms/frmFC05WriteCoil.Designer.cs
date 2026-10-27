@@ -44,7 +44,7 @@
             label1.Location = new Point(13, 24);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 28);
+            label1.Size = new Size(110, 32);
             label1.TabIndex = 0;
             label1.Text = "IP SLAVE:";
             // 
@@ -54,7 +54,7 @@
             lblIPSlave.Location = new Point(122, 24);
             lblIPSlave.Margin = new Padding(4, 0, 4, 0);
             lblIPSlave.Name = "lblIPSlave";
-            lblIPSlave.Size = new Size(65, 28);
+            lblIPSlave.Size = new Size(78, 32);
             lblIPSlave.TabIndex = 1;
             lblIPSlave.Text = "label2";
             // 
@@ -64,7 +64,7 @@
             label2.Location = new Point(13, 78);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(111, 28);
+            label2.Size = new Size(134, 32);
             label2.TabIndex = 2;
             label2.Text = "DIRECCION";
             // 
@@ -74,7 +74,7 @@
             label3.Location = new Point(13, 125);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(71, 28);
+            label3.Size = new Size(85, 32);
             label3.TabIndex = 3;
             label3.Text = "VALOR";
             // 
@@ -82,24 +82,24 @@
             // 
             lblValorBool.AutoSize = true;
             lblValorBool.BackColor = SystemColors.ButtonFace;
-            lblValorBool.Location = new Point(131, 125);
+            lblValorBool.Location = new Point(167, 125);
             lblValorBool.Margin = new Padding(4, 0, 4, 0);
             lblValorBool.Name = "lblValorBool";
-            lblValorBool.Size = new Size(51, 28);
+            lblValorBool.Size = new Size(63, 32);
             lblValorBool.TabIndex = 4;
             lblValorBool.Text = "false";
             lblValorBool.Click += lblValorBool_Click;
             // 
             // txbDireccion
             // 
-            txbDireccion.Location = new Point(131, 78);
+            txbDireccion.Location = new Point(167, 78);
             txbDireccion.Name = "txbDireccion";
-            txbDireccion.Size = new Size(67, 34);
+            txbDireccion.Size = new Size(67, 39);
             txbDireccion.TabIndex = 5;
             // 
             // btnFC05
             // 
-            btnFC05.Location = new Point(131, 191);
+            btnFC05.Location = new Point(140, 200);
             btnFC05.Name = "btnFC05";
             btnFC05.Size = new Size(90, 47);
             btnFC05.TabIndex = 6;
@@ -113,19 +113,19 @@
             lblConexion.BackColor = Color.Red;
             lblConexion.BorderStyle = BorderStyle.FixedSingle;
             lblConexion.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblConexion.Location = new Point(32, 192);
+            lblConexion.Location = new Point(13, 191);
             lblConexion.Name = "lblConexion";
-            lblConexion.Size = new Size(68, 48);
+            lblConexion.Size = new Size(80, 56);
             lblConexion.TabIndex = 7;
             lblConexion.Text = "NC";
             lblConexion.Click += lblConexion_Click;
             // 
             // frmFC05WriteCoil
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(257, 259);
+            ClientSize = new Size(274, 259);
             Controls.Add(lblConexion);
             Controls.Add(btnFC05);
             Controls.Add(txbDireccion);
@@ -138,6 +138,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4);
             Name = "frmFC05WriteCoil";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FC05WriteCoils";
             FormClosing += frmFC05WriteCoil_FormClosing;
             Load += frmFC05WriteCoil_Load;

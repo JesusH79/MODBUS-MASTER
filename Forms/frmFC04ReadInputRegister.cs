@@ -17,9 +17,16 @@ namespace MODBUS_MASTER.Forms
         {
             InitializeComponent();
         }
-        bool conexion = false;
+  
+        int numero_ciclos = 0;
         ModbusClient modbus_Client = new ModbusClient();
+        
 
+        public void reiniciar_elementos()
+        {
+            tmrReadInputRegisters.Enabled = false;
+            btnFCO4ReadInputRegister.Text = "START READING";
+        }
 
         public void Conectar()
         {
@@ -31,7 +38,9 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblConexion.Text = "NC";
                 lblConexion.BackColor = Color.Red;
             }
@@ -47,7 +56,7 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -56,11 +65,15 @@ namespace MODBUS_MASTER.Forms
             lblIPSlave.Text = classDatos.IPSlave;
             modbus_Client.IPAddress = classDatos.IPSlave;
             txbDireccion.Text = classDatos.direccionFC04;
+            tmrReadInputRegisters.Interval = 1000;
+            tmrReadInputRegisters.Stop();
             Conectar();
         }
 
         private void frmFC04ReadInputRegister_FormClosing(object sender, FormClosingEventArgs e)
         {
+            tmrReadInputRegisters.Enabled = false;
+            btnFCO4ReadInputRegister.Text = "START READING";
             Desconectar();
             classDatos.direccionFC04 = txbDireccion.Text;
         }
@@ -69,7 +82,9 @@ namespace MODBUS_MASTER.Forms
         {
             if (modbus_Client.Connected)
             {
+                reiniciar_elementos();
                 Desconectar();
+                
             }
             else
             {
@@ -79,7 +94,7 @@ namespace MODBUS_MASTER.Forms
 
         private void btnFCO4ReadInputRegister_Click(object sender, EventArgs e)
         {
-            int[] inputRegisters;
+
 
             if (txbDireccion.Text == "" || txbNumeroRegistros.Text == "")
             {
@@ -88,21 +103,49 @@ namespace MODBUS_MASTER.Forms
             }
             else
             {
-                rtxValoresRegistros.Clear();
-                if (modbus_Client.Connected)
+                if (tmrReadInputRegisters.Enabled)
                 {
-                    
+                    reiniciar_elementos();
+                    numero_ciclos = 0;
+                }
+                else
+                {
+                    tmrReadInputRegisters.Enabled = true;
+                    btnFCO4ReadInputRegister.Text = "STOP READING";
+                }
+                
+            }
+        }
+
+        private void tmrReadInputRegisters_Tick(object sender, EventArgs e)
+        {
+            int[] inputRegisters;
+            rtxValoresRegistros.Clear();
+            if (modbus_Client.Connected)
+            {
+                try
+                {
                     inputRegisters = modbus_Client.ReadInputRegisters(int.Parse(txbDireccion.Text), int.Parse(txbNumeroRegistros.Text));
+                   
                     for (int i = 0; i < inputRegisters.Length; i++)
                     {
                         rtxValoresRegistros.Text += ($"Register {i}: {inputRegisters[i]} \r\n");
                     }
-
+                    numero_ciclos++;
+                    lblNumeroCiclo.Text = numero_ciclos.ToString();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No hay conexión con el esclavo.");
+                    reiniciar_elementos();
+                    CustomMessageBox.Show("Error: " + ex.Message , "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
+
+            }
+            else
+            {
+                CustomMessageBox.Show("No hay conexión con el esclavo.", "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                reiniciar_elementos() ;
             }
         }
     }

@@ -21,6 +21,7 @@ namespace MODBUS_MASTER
               git push*/
 
             txbIPSlave.Text = Settings.Default.IP;
+            //CustomMessageBox.Show("Bienvenido al programa MODBUS MASTER", "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnFC05_Click(object sender, EventArgs e)
         {
@@ -121,6 +122,44 @@ namespace MODBUS_MASTER
 
                 // Mostrar el formulario como ventana independiente
                 frmFC16.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el formulario: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFC02_Click(object sender, EventArgs e)
+        {
+            classDatos.IPSlave = txbIPSlave.Text;
+            try
+            {
+                // Crear instancia del segundo formulario
+                frmFC02ReadDiscreteInputs frmFC02 = new();
+
+                // Mostrar el formulario como ventana independiente
+                frmFC02.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el formulario: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFC03_Click(object sender, EventArgs e)
+        {
+            classDatos.IPSlave = txbIPSlave.Text;
+            try
+            {
+                // Crear instancia del segundo formulario
+                frmFC03ReadHoldingRegisters frmFC03 = new();
+
+                // Mostrar el formulario como ventana independiente
+                frmFC03.ShowDialog();
 
             }
             catch (Exception ex)

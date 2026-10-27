@@ -45,7 +45,7 @@
             label1.Location = new Point(12, 11);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 28);
+            label1.Size = new Size(110, 32);
             label1.TabIndex = 0;
             label1.Text = "IP SLAVE:";
             // 
@@ -55,7 +55,7 @@
             lblIPSlave.Location = new Point(112, 11);
             lblIPSlave.Margin = new Padding(4, 0, 4, 0);
             lblIPSlave.Name = "lblIPSlave";
-            lblIPSlave.Size = new Size(28, 28);
+            lblIPSlave.Size = new Size(33, 32);
             lblIPSlave.TabIndex = 1;
             lblIPSlave.Text = "IP";
             // 
@@ -64,16 +64,16 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 60);
             label2.Name = "label2";
-            label2.Size = new Size(116, 56);
+            label2.Size = new Size(139, 32);
             label2.TabIndex = 2;
-            label2.Text = "DIRECCION \r\nINICIAL:";
+            label2.Text = "DIRECCION:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(25, 131);
+            label3.Location = new Point(15, 128);
             label3.Name = "label3";
-            label3.Size = new Size(103, 28);
+            label3.Size = new Size(125, 32);
             label3.TabIndex = 3;
             label3.Text = "No. COILS:";
             // 
@@ -85,28 +85,28 @@
             lblConexion.Location = new Point(15, 189);
             lblConexion.Margin = new Padding(4, 0, 4, 0);
             lblConexion.Name = "lblConexion";
-            lblConexion.Size = new Size(66, 46);
+            lblConexion.Size = new Size(78, 54);
             lblConexion.TabIndex = 4;
             lblConexion.Text = "NC";
             lblConexion.Click += lblConexion_Click;
             // 
             // txbDireccion
             // 
-            txbDireccion.Location = new Point(134, 60);
+            txbDireccion.Location = new Point(151, 57);
             txbDireccion.Name = "txbDireccion";
-            txbDireccion.Size = new Size(125, 34);
+            txbDireccion.Size = new Size(125, 39);
             txbDireccion.TabIndex = 6;
             // 
             // txbNumeroCoils
             // 
-            txbNumeroCoils.Location = new Point(134, 125);
+            txbNumeroCoils.Location = new Point(151, 121);
             txbNumeroCoils.Name = "txbNumeroCoils";
-            txbNumeroCoils.Size = new Size(125, 34);
+            txbNumeroCoils.Size = new Size(125, 39);
             txbNumeroCoils.TabIndex = 7;
             // 
             // btnFC02ReadDiscreteInputs
             // 
-            btnFC02ReadDiscreteInputs.Location = new Point(112, 189);
+            btnFC02ReadDiscreteInputs.Location = new Point(130, 201);
             btnFC02ReadDiscreteInputs.Name = "btnFC02ReadDiscreteInputs";
             btnFC02ReadDiscreteInputs.Size = new Size(146, 42);
             btnFC02ReadDiscreteInputs.TabIndex = 8;
@@ -119,16 +119,16 @@
             rtxValoresCoils.Location = new Point(15, 267);
             rtxValoresCoils.Name = "rtxValoresCoils";
             rtxValoresCoils.ReadOnly = true;
-            rtxValoresCoils.Size = new Size(244, 219);
+            rtxValoresCoils.Size = new Size(261, 269);
             rtxValoresCoils.TabIndex = 9;
             rtxValoresCoils.Text = "";
             // 
             // frmFC02ReadDiscreteInputs
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(288, 510);
+            ClientSize = new Size(288, 548);
             Controls.Add(rtxValoresCoils);
             Controls.Add(btnFC02ReadDiscreteInputs);
             Controls.Add(txbNumeroCoils);
@@ -142,6 +142,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4);
             Name = "frmFC02ReadDiscreteInputs";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "frmFC02ReadDiscreteInputs";
             FormClosing += frmFC02ReadDiscreteInputs_FormClosing;
             Load += frmFC02ReadDiscreteInputs_Load;

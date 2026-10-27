@@ -44,7 +44,7 @@
             label1.Location = new Point(3, 23);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 28);
+            label1.Size = new Size(110, 32);
             label1.TabIndex = 0;
             label1.Text = "IP SLAVE:";
             // 
@@ -55,7 +55,7 @@
             lblIPSlave.Location = new Point(131, 23);
             lblIPSlave.Margin = new Padding(4, 0, 4, 0);
             lblIPSlave.Name = "lblIPSlave";
-            lblIPSlave.Size = new Size(65, 28);
+            lblIPSlave.Size = new Size(78, 32);
             lblIPSlave.TabIndex = 1;
             lblIPSlave.Text = "label2";
             // 
@@ -66,7 +66,7 @@
             label3.Location = new Point(3, 68);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(111, 28);
+            label3.Size = new Size(134, 32);
             label3.TabIndex = 2;
             label3.Text = "DIRECCION";
             // 
@@ -77,13 +77,13 @@
             label4.Location = new Point(43, 131);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(71, 28);
+            label4.Size = new Size(85, 32);
             label4.TabIndex = 3;
             label4.Text = "VALOR";
             // 
             // btnFC06WriteRegister
             // 
-            btnFC06WriteRegister.Location = new Point(131, 208);
+            btnFC06WriteRegister.Location = new Point(153, 217);
             btnFC06WriteRegister.Name = "btnFC06WriteRegister";
             btnFC06WriteRegister.Size = new Size(125, 48);
             btnFC06WriteRegister.TabIndex = 4;
@@ -93,16 +93,16 @@
             // 
             // txbDireccion
             // 
-            txbDireccion.Location = new Point(131, 68);
+            txbDireccion.Location = new Point(153, 68);
             txbDireccion.Name = "txbDireccion";
-            txbDireccion.Size = new Size(125, 34);
+            txbDireccion.Size = new Size(125, 39);
             txbDireccion.TabIndex = 5;
             // 
             // txbValor
             // 
-            txbValor.Location = new Point(131, 128);
+            txbValor.Location = new Point(153, 128);
             txbValor.Name = "txbValor";
-            txbValor.Size = new Size(125, 34);
+            txbValor.Size = new Size(125, 39);
             txbValor.TabIndex = 6;
             // 
             // lblConexion
@@ -111,20 +111,20 @@
             lblConexion.BackColor = Color.Red;
             lblConexion.BorderStyle = BorderStyle.FixedSingle;
             lblConexion.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblConexion.Location = new Point(43, 208);
+            lblConexion.Location = new Point(22, 209);
             lblConexion.Margin = new Padding(4, 0, 4, 0);
             lblConexion.Name = "lblConexion";
-            lblConexion.Size = new Size(68, 48);
+            lblConexion.Size = new Size(80, 56);
             lblConexion.TabIndex = 7;
             lblConexion.Text = "NC";
             lblConexion.Click += lblConexion_Click;
             // 
             // frmFC06WriteRegister
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(297, 300);
+            ClientSize = new Size(330, 300);
             Controls.Add(lblConexion);
             Controls.Add(txbValor);
             Controls.Add(txbDireccion);
@@ -137,6 +137,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4);
             Name = "frmFC06WriteRegister";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Write Single Register";
             FormClosing += frmFC06WriteRegister_FormClosing;
             Load += frmFC06WriteRegister_Load;

@@ -37,6 +37,7 @@
             btnFC15 = new Button();
             btnFC16 = new Button();
             btnFC02 = new Button();
+            btnFC03 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -45,16 +46,16 @@
             label1.Font = new Font("Segoe UI", 12F);
             label1.Location = new Point(88, 35);
             label1.Name = "label1";
-            label1.Size = new Size(88, 28);
+            label1.Size = new Size(105, 32);
             label1.TabIndex = 0;
             label1.Text = "IP SLAVE";
             // 
             // txbIPSlave
             // 
             txbIPSlave.Font = new Font("Segoe UI", 12F);
-            txbIPSlave.Location = new Point(182, 35);
+            txbIPSlave.Location = new Point(199, 35);
             txbIPSlave.Name = "txbIPSlave";
-            txbIPSlave.Size = new Size(135, 34);
+            txbIPSlave.Size = new Size(135, 39);
             txbIPSlave.TabIndex = 1;
             txbIPSlave.Text = "192.168.1.22";
             // 
@@ -128,12 +129,26 @@
             btnFC02.TabIndex = 7;
             btnFC02.Text = "READ DISCRETE COILS";
             btnFC02.UseVisualStyleBackColor = false;
+            btnFC02.Click += btnFC02_Click;
+            // 
+            // btnFC03
+            // 
+            btnFC03.BackColor = Color.LightYellow;
+            btnFC03.FlatStyle = FlatStyle.Popup;
+            btnFC03.Location = new Point(240, 395);
+            btnFC03.Name = "btnFC03";
+            btnFC03.Size = new Size(189, 72);
+            btnFC03.TabIndex = 8;
+            btnFC03.Text = "READ HOLDING COILS";
+            btnFC03.UseVisualStyleBackColor = false;
+            btnFC03.Click += btnFC03_Click;
             // 
             // frmPrincipal
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(453, 399);
+            ClientSize = new Size(453, 479);
+            Controls.Add(btnFC03);
             Controls.Add(btnFC02);
             Controls.Add(btnFC16);
             Controls.Add(btnFC15);
@@ -146,6 +161,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "frmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MASTER MODBUS";
             FormClosing += frmPrincipal_FormClosing;
             Load += frmPrincipal_Load;
@@ -163,5 +179,6 @@
         private Button btnFC15;
         private Button btnFC16;
         private Button btnFC02;
+        private Button btnFC03;
     }
 }

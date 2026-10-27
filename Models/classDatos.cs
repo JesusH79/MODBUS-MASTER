@@ -23,6 +23,9 @@ namespace MODBUS_MASTER.Models
         //para formulario FC02
         public static string direccionFC02 { get; set; }
 
+        //para formulario FC03
+        public static string direccionFC03 { get; set; }
+
         //para formulario FC15
         public static string direccionFC15 { get; set; }
         public static string noCoilsFC15 { get; set; }

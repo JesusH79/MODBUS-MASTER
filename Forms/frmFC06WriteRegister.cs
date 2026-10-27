@@ -16,7 +16,7 @@ namespace MODBUS_MASTER.Forms
         {
             InitializeComponent();
         }
-        bool conexion = false;
+        
         ModbusClient modbus_Client = new ModbusClient();
         public void Conectar()
         {
@@ -28,7 +28,7 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblConexion.Text = "NC";
                 lblConexion.BackColor = Color.Red;
             }
@@ -44,13 +44,14 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void frmFC06WriteRegister_Load(object sender, EventArgs e)
         {
             lblIPSlave.Text = classDatos.IPSlave;
             modbus_Client.IPAddress = classDatos.IPSlave;
+            //modbus_Client.Port = 1025;
             txbDireccion.Text = classDatos.direccionFC06;
             txbValor.Text = classDatos.valorFC06;
             Conectar();

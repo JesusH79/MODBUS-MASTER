@@ -28,7 +28,7 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblConexion.Text = "NC";
                 lblConexion.BackColor = Color.Red;
             }
@@ -44,7 +44,7 @@ namespace MODBUS_MASTER.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                CustomMessageBox.Show("Error: " + ex.Message, "Aviso", 500, 300, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void frmFC16WriteMultipleRegisters_Load(object sender, EventArgs e)
